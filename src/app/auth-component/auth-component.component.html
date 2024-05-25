@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Login Page -->
+  <div class="container"  *ngIf="screen == 'signin'">
+    <h1 class="heading">👋 bienvenido a Muni-Job<br><br></h1>
+    <p class="para">¡Inicia sesión para continuar!</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend> 
+          <ion-input formControlName="email" type="email" placeholder="name@domain.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text"><a (click)="change('forget')">¿Has olvidado tu contraseña?</a></p>
+      <p class="signup-text">Soy un nuevo usuario&nbsp;<a (click)="change('signup')">¿Inscribirse?</a></p>
+      <ion-button class="login-button" (click)="login()" expand="block">Acceder</ion-button>
+      <ion-button class="google-button" expand="block" color="light"><ion-icon name="logo-google"></ion-icon>&nbsp;&nbsp;Iniciar sesión con Google</ion-button>
+    </form>
+  </div>
+
+  <!-- Sign up page -->
+  <div class="container"  *ngIf="screen == 'signup'">
+    <h1 class="heading">🚀 Crear una cuenta<br><br></h1>
+    <p class="para">¡Regístrate para empezar!</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Nombre completo</legend> 
+          <ion-input formControlName="name" type="text" placeholder="John Doe"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend> 
+          <ion-input formControlName="email" type="email" placeholder="john@doe.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text">ya soy miembro&nbsp;<a (click)="change('signin')">¿Iniciar sesión?</a></p>
+      <ion-button class="login-button" (click)="register()" expand="block">Inscribirse</ion-button>
+      <ion-button class="google-button" expand="block" color="light"><ion-icon name="logo-google"></ion-icon>&nbsp;&nbsp;Iniciar sesión con Google</ion-button>
+    </form>
+  </div>
+
+  <!-- Forget password page -->
+  <div class="container"  *ngIf="screen == 'forget'">
+    <h1 class="heading">¿Olvidaste contraseña?<br><br></h1>
+    <p class="para">Ingrese el correo electrónico para restablecer</p>
+    <ion-item lines="none" class="ion-item">
+      <fieldset  class="input-item">
+        <legend>Email</legend> 
+        <ion-input type="email" placeholder="name@domain.com"></ion-input>
+      </fieldset>
+    </ion-item>
+    <p class="signup-text">Recordar contraseña&nbsp;<a (click)="change('signin')">¿Iniciar sesión?</a></p>
+    <ion-button class="login-button" expand="block">Restablecer la contraseña</ion-button>
+  </div>
+
+
+</ion-content>
+<ion-footer color="white">
+  <ion-toolbar>
+    <p class="copyright">Elaborado en ❤️ por&nbsp;<a>Muni-Job</a></p>
+  </ion-toolbar>
+</ion-footer>

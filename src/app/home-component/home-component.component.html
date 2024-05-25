@@ -1,0 +1,35 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Busqueda</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item>Mensajes</ion-item>
+        <ion-item routerLink="/list">Lista de empleos ofrecidos</ion-item>
+        <ion-item>Historial de Servicios</ion-item>
+        <ion-item>Metodo de Pago</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Bienvenido a Muni-Job</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding"> 
+      <ion-card-content>
+        <img src="https://www.laportadacanada.com/userfiles/images/canada1fo2(9).jpg" alt="Bienvenido" class="welcome-image"/> <!-- Imagen añadida aquí -->
+        <p>Gracias por unirte a Muni-Job. Estamos emocionados de tenerte con nosotros.</p>
+        <p>Descubre todas las increíbles funciones que tenemos para ofrecerte.</p>
+      </ion-card-content>
+    </ion-content>
+  </div>
+</ion-app>
+
